@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Html重难点标签 | 捉泥鳅的博客</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="html的重难点标有:a标签，table标签，img标签，form标签，input标签
+a标签 a标签的属性有:
+ href target download rel=noopener  a标签的作用: 1、跳转到外部页面 ，2、跳转到内部锚点，3、跳到邮箱或者电话
+a的href取值:
+网址:
+https://google.com
+http://google.com
+//google.com
+路径
+/a/b/c(绝对路径)以及a/b/c(相对路径)，index.html及./index.html
+伪协议
+javascript:代码;
+maito:邮箱
+tel:手机号
+id
+href=#xxx
+a标签的target取值:
+_blank:在新窗口打开
+_top:在顶部，最外面的窗口打开
+_parent:在父级窗口打开
+_self:基于当前窗口打开
+table标签 与table相关的标签有:table ,thead ,tbody,tfoot,tr,td,th。相关的样式有:table-layout,border-collapse,border-spacing,我们来做个小练习吧，代码如下:
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; table{ width: 600px; border-spacing: collapse; border-spacing: 0; } td, th{ border:1px solid blue; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;&lt;/th&gt; &lt;th&gt;小红&lt;/th&gt; &lt;th&gt;小明&lt;/th&gt; &lt;th&gt;小黄&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;th&gt;语文&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;100&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;数学&lt;/th&gt; &lt;td&gt;80&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;英语&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;98&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;th&gt;总分&lt;/th&gt; &lt;td&gt;260&lt;/td&gt; &lt;td&gt;280&lt;/td&gt; &lt;td&gt;278&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt; &lt;/table&gt; &lt;/body&gt; &lt;/html&gt; 浏览器显示的结果如下: img标签 作用:发出get请求，展示一张图片。">
+    <meta name="generator" content="Hugo 0.79.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Html重难点标签" />
+<meta property="og:description" content="html的重难点标有:a标签，table标签，img标签，form标签，input标签
+a标签 a标签的属性有:
+ href target download rel=noopener  a标签的作用: 1、跳转到外部页面 ，2、跳转到内部锚点，3、跳到邮箱或者电话
+a的href取值:
+网址:
+https://google.com
+http://google.com
+//google.com
+路径
+/a/b/c(绝对路径)以及a/b/c(相对路径)，index.html及./index.html
+伪协议
+javascript:代码;
+maito:邮箱
+tel:手机号
+id
+href=#xxx
+a标签的target取值:
+_blank:在新窗口打开
+_top:在顶部，最外面的窗口打开
+_parent:在父级窗口打开
+_self:基于当前窗口打开
+table标签 与table相关的标签有:table ,thead ,tbody,tfoot,tr,td,th。相关的样式有:table-layout,border-collapse,border-spacing,我们来做个小练习吧，代码如下:
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; table{ width: 600px; border-spacing: collapse; border-spacing: 0; } td, th{ border:1px solid blue; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;&lt;/th&gt; &lt;th&gt;小红&lt;/th&gt; &lt;th&gt;小明&lt;/th&gt; &lt;th&gt;小黄&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;th&gt;语文&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;100&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;数学&lt;/th&gt; &lt;td&gt;80&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;英语&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;98&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;th&gt;总分&lt;/th&gt; &lt;td&gt;260&lt;/td&gt; &lt;td&gt;280&lt;/td&gt; &lt;td&gt;278&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt; &lt;/table&gt; &lt;/body&gt; &lt;/html&gt; 浏览器显示的结果如下: img标签 作用:发出get请求，展示一张图片。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://woniu-create.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9%E6%A0%87%E7%AD%BE/" />
+<meta property="article:published_time" content="2021-01-01T11:49:40+08:00" />
+<meta property="article:modified_time" content="2021-01-01T11:49:40+08:00" />
+<meta itemprop="name" content="Html重难点标签">
+<meta itemprop="description" content="html的重难点标有:a标签，table标签，img标签，form标签，input标签
+a标签 a标签的属性有:
+ href target download rel=noopener  a标签的作用: 1、跳转到外部页面 ，2、跳转到内部锚点，3、跳到邮箱或者电话
+a的href取值:
+网址:
+https://google.com
+http://google.com
+//google.com
+路径
+/a/b/c(绝对路径)以及a/b/c(相对路径)，index.html及./index.html
+伪协议
+javascript:代码;
+maito:邮箱
+tel:手机号
+id
+href=#xxx
+a标签的target取值:
+_blank:在新窗口打开
+_top:在顶部，最外面的窗口打开
+_parent:在父级窗口打开
+_self:基于当前窗口打开
+table标签 与table相关的标签有:table ,thead ,tbody,tfoot,tr,td,th。相关的样式有:table-layout,border-collapse,border-spacing,我们来做个小练习吧，代码如下:
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; table{ width: 600px; border-spacing: collapse; border-spacing: 0; } td, th{ border:1px solid blue; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;&lt;/th&gt; &lt;th&gt;小红&lt;/th&gt; &lt;th&gt;小明&lt;/th&gt; &lt;th&gt;小黄&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;th&gt;语文&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;100&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;数学&lt;/th&gt; &lt;td&gt;80&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;英语&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;98&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;th&gt;总分&lt;/th&gt; &lt;td&gt;260&lt;/td&gt; &lt;td&gt;280&lt;/td&gt; &lt;td&gt;278&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt; &lt;/table&gt; &lt;/body&gt; &lt;/html&gt; 浏览器显示的结果如下: img标签 作用:发出get请求，展示一张图片。">
+<meta itemprop="datePublished" content="2021-01-01T11:49:40+08:00" />
+<meta itemprop="dateModified" content="2021-01-01T11:49:40+08:00" />
+<meta itemprop="wordCount" content="299">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Html重难点标签"/>
+<meta name="twitter:description" content="html的重难点标有:a标签，table标签，img标签，form标签，input标签
+a标签 a标签的属性有:
+ href target download rel=noopener  a标签的作用: 1、跳转到外部页面 ，2、跳转到内部锚点，3、跳到邮箱或者电话
+a的href取值:
+网址:
+https://google.com
+http://google.com
+//google.com
+路径
+/a/b/c(绝对路径)以及a/b/c(相对路径)，index.html及./index.html
+伪协议
+javascript:代码;
+maito:邮箱
+tel:手机号
+id
+href=#xxx
+a标签的target取值:
+_blank:在新窗口打开
+_top:在顶部，最外面的窗口打开
+_parent:在父级窗口打开
+_self:基于当前窗口打开
+table标签 与table相关的标签有:table ,thead ,tbody,tfoot,tr,td,th。相关的样式有:table-layout,border-collapse,border-spacing,我们来做个小练习吧，代码如下:
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; table{ width: 600px; border-spacing: collapse; border-spacing: 0; } td, th{ border:1px solid blue; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;&lt;/th&gt; &lt;th&gt;小红&lt;/th&gt; &lt;th&gt;小明&lt;/th&gt; &lt;th&gt;小黄&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;th&gt;语文&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;100&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;数学&lt;/th&gt; &lt;td&gt;80&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;英语&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;98&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;th&gt;总分&lt;/th&gt; &lt;td&gt;260&lt;/td&gt; &lt;td&gt;280&lt;/td&gt; &lt;td&gt;278&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt; &lt;/table&gt; &lt;/body&gt; &lt;/html&gt; 浏览器显示的结果如下: img标签 作用:发出get请求，展示一张图片。"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        捉泥鳅的博客
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://woniu-create.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9%E6%A0%87%E7%AD%BE/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://woniu-create.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9%E6%A0%87%E7%AD%BE/&amp;text=Html%e9%87%8d%e9%9a%be%e7%82%b9%e6%a0%87%e7%ad%be" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://woniu-create.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9%E6%A0%87%E7%AD%BE/&amp;title=Html%e9%87%8d%e9%9a%be%e7%82%b9%e6%a0%87%e7%ad%be" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Html重难点标签</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-01-01T11:49:40+08:00">January 1, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>html的重难点标有:<code>a标签，table标签，img标签，form标签，input标签</code></p>
+<h1 id="a标签">a标签</h1>
+<p>a标签的属性有:</p>
+<ul>
+<li>href</li>
+<li>target</li>
+<li>download</li>
+<li>rel=noopener</li>
+</ul>
+<p><strong>a标签的作用:</strong> 1、跳转到外部页面 ，2、跳转到内部锚点，3、跳到邮箱或者电话</p>
+<p><strong>a的href取值:</strong><br>
+<em><strong>网址:</strong></em></p>
+<p><a href="https://google.com">https://google.com</a></p>
+<p><a href="http://google.com">http://google.com</a></p>
+<p>//google.com</p>
+<p><em><strong>路径</strong></em></p>
+<p>/a/b/c(绝对路径)以及a/b/c(相对路径)，index.html及./index.html</p>
+<p><em><strong>伪协议</strong></em></p>
+<p>javascript:代码;</p>
+<p>maito:邮箱</p>
+<p>tel:手机号</p>
+<p><em><strong>id</strong></em></p>
+<p>href=#xxx</p>
+<p>a标签的target取值:</p>
+<p>_blank:在新窗口打开</p>
+<p>_top:在顶部，最外面的窗口打开</p>
+<p>_parent:在父级窗口打开</p>
+<p>_self:基于当前窗口打开</p>
+<h1 id="table标签">table标签</h1>
+<p>与table相关的标签有:table ,thead ,tbody,tfoot,tr,td,th。相关的样式有:table-layout,border-collapse,border-spacing,我们来做个小练习吧，代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">table</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">600</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border-spacing</span>: <span style="color:#66d9ef">collapse</span>;
+            <span style="color:#66d9ef">border-spacing</span>: <span style="color:#ae81ff">0</span>;
+        }
+        <span style="color:#f92672">td</span><span style="color:#f92672">,</span>
+        <span style="color:#f92672">th</span>{
+            <span style="color:#66d9ef">border</span>:<span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">blue</span>;
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">table</span>&gt;
+        &lt;<span style="color:#f92672">thead</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;小红&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;小明&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;小黄&lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        &lt;/<span style="color:#f92672">thead</span>&gt;
+        &lt;<span style="color:#f92672">tbody</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;语文&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;90&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;100&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;90&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;数学&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;80&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;90&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;90&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;英语&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;90&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;90&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;98&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        &lt;/<span style="color:#f92672">tbody</span>&gt;
+        &lt;<span style="color:#f92672">tfoot</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;总分&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;260&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;280&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;278&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        &lt;/<span style="color:#f92672">tfoot</span>&gt;
+    &lt;/<span style="color:#f92672">table</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>浏览器显示的结果如下:
+<img src="/table.png" alt=""></p>
+<h1 id="img标签">img标签</h1>
+<p><strong>作用</strong>:发出get请求，展示一张图片。</p>
+<p><strong>属性</strong>有:alt/height/width/src,其中alt表示:图片加载失败时提示文字</p>
+<p><strong>相关的事件</strong>:</p>
+<p>onload:图片加载成功时</p>
+<p>onerror：图片加载失败时会触发</p>
+<p>我们来看一段代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+     &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;我是二哈&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxx&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;400px&#34;</span>&gt;
+     &lt;<span style="color:#f92672">script</span>&gt;
+         <span style="color:#a6e22e">xxx</span>.<span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){
+             <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;图片加载成功&#39;</span>)
+         }
+         <span style="color:#a6e22e">xxx</span>.<span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(){
+             <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;图片加载失败&#39;</span>)
+             <span style="color:#a6e22e">xxx</span>.<span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;404.png&#34;</span>
+         }
+     &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>最后图片加载成功，控制台打印出&quot;图片加载成功&quot;
+<img src="/load.png" alt="">
+<strong>响应式</strong></p>
+<p>代码如下:max-width:100%</p>
+<p>我们来看一段将图片设置成响应式的代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">*</span>{
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">box-sizing</span>: <span style="color:#66d9ef">border-box</span>;
+        }
+       <span style="color:#f92672">img</span>{ <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>; <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>; }
+        
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./404.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;我是二哈&#34;</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>图片会随着窗口大小自适应地缩放:
+<img src="/dog.gif" alt=""></p>
+<h1 id="form-标签">form 标签</h1>
+<p><strong>作用</strong>:发出get或post请求，然后刷新页面</p>
+<p><strong>属性</strong> :action/aotocomplete/method/target</p>
+<p>action:请求的页面地址</p>
+<p>autocomplate:自动填充name(要设置为on,并且有name=&ldquo;username&quot;才生效)</p>
+<p><strong>事件</strong> ：onsubmit</p>
+<p><strong>input的submitbutton的submit有何区别?</strong></p>
+<p>input只能有纯文本，不能有其他标签，button可以有其他标签</p>
+<p>来看一段代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/yyy&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span> <span style="color:#a6e22e">autocomplete</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;on&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a&#34;</span>&gt;
+      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;
+      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;strong&gt;搞起&lt;/strong&gt;&#34;</span>&gt;
+      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;提交&lt;/<span style="color:#f92672">strong</span>&gt; &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dog.png&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100px&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><p>可以看出input里的strong标签并没有生效
+<img src="/dog2.png" alt=""></p>
+<h1 id="input标签">input标签</h1>
+<p><strong>作用</strong> :让用户输入内容</p>
+<p><strong>属性type</strong>：button/checkbox/email/file/hidden/number/password/radio/search/submit/tel/text</p>
+<p><strong>其他name</strong> :autofocus/checked/disabled/maxlength/pattern/value/placeholder</p>
+<p><strong>事件</strong>:onchange/onfocue/onblur</p>
+<p><strong>其他输入标签</strong>:select+option/textarea/label</p>
+<p>我们通过一个小练习来学习它的用法吧:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/yyy&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span> <span style="color:#a6e22e">autocomplete</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a&#34;</span>&gt;
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">required</span>/&gt;
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color&#34;</span>/&gt;
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span>/&gt;
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gender&#34;</span>&gt;男
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gender&#34;</span>&gt;女
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;唱
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;rap
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;跳
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;篮球
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span>/&gt;
+       &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">multiple</span>/&gt;
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       看不见我吧: &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span>&gt;
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resize: none;width: 50%;height: 300px;&#34;</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
+       &lt;<span style="color:#f92672">hr</span>/&gt;
+       &lt;<span style="color:#f92672">select</span>&gt;
+           &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;-请选择-&lt;/<span style="color:#f92672">option</span>&gt;
+           &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;星期一&lt;/<span style="color:#f92672">option</span>&gt;
+           &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;星期二&lt;/<span style="color:#f92672">option</span>&gt;
+       &lt;/<span style="color:#f92672">select</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://woniu-create.github.io" >
+    &copy;  捉泥鳅的博客 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -6,16 +6,98 @@
     <description>Recent content in Posts on 捉泥鳅的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 27 Dec 2020 20:07:32 +0800</lastBuildDate><atom:link href="https://woniu-create.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Mar 2021 19:28:05 +0800</lastBuildDate><atom:link href="https://woniu-create.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jquery基本操作</title>
+      <link>https://woniu-create.github.io/posts/jquery%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 19 Mar 2021 19:28:05 +0800</pubDate>
+      
+      <guid>https://woniu-create.github.io/posts/jquery%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <description>本文将介绍Jquery的常用操作。
+获取元素 jQuery的基本思想和主要用法，就是 &amp;ldquo;选择某个网页元素，然后对其进行某种操作&amp;rdquo; 。 使用jQuery的第一步，就是将一个选择表达式，放进构造函数jQuery()（简写为$）,然后得到被选中的元素。
+如下所示:
+$(document) //选择整个文档对象  $(&amp;#39;#myId&amp;#39;) //选择ID为myId的网页元素  $(&amp;#39;div.myClass&amp;#39;) // 选择class为myClass的div元素  $(&amp;#39;input[name=first]&amp;#39;) // 选择name属性等于first的input元素 　$(&amp;#39;a:first&amp;#39;) //选择网页中第一个a元素  $(&amp;#39;tr:odd&amp;#39;) //选择表格的奇数行  $(&amp;#39;#myForm :input&amp;#39;) // 选择表单中的input元素 Jquery提供了强大的过滤功能，对结果集进行过滤，缩小选择范围，如下所示:
+$(&amp;#39;div&amp;#39;).has(&amp;#39;p&amp;#39;); // 选择包含p元素的div元素  $(&amp;#39;div&amp;#39;).not(&amp;#39;.myClass&amp;#39;); //选择class不等于myClass的div元素  $(&amp;#39;div&amp;#39;).filter(&amp;#39;.myClass&amp;#39;); //选择class等于myClass的div元素  $(&amp;#39;div&amp;#39;).first(); //选择第1个div元素  $(&amp;#39;div&amp;#39;).eq(5); //选择第6个div元素 从结果集出发，找到附近的相关元素
+$(&amp;#39;div&amp;#39;).next(&amp;#39;p&amp;#39;); //选择div元素后面的第一个p元素  $(&amp;#39;div&amp;#39;).parent(); //选择div元素的父元素  $(&amp;#39;div&amp;#39;).closest(&amp;#39;form&amp;#39;); //选择离div最近的那个form父元素  $(&amp;#39;div&amp;#39;).children(); //选择div的所有子元素  $(&amp;#39;div&amp;#39;).siblings(); //选择div的同级元素 链式操作思想 链式操作是jQuery设计思想之一，就是在选中的网页元素后面，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来,如:
+$(&amp;#39;div&amp;#39;).find(&amp;#39;h3&amp;#39;).eq(2).html(&amp;#39;Hello&amp;#39;); 分解开来，如下:
+$(&amp;#39;div&amp;#39;) //找到div元素  .find(&amp;#39;h3&amp;#39;) //选择其中的h3元素  .</description>
+    </item>
+    
+    <item>
+      <title>Js函数执行机制</title>
+      <link>https://woniu-create.github.io/posts/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Mon, 25 Jan 2021 22:59:29 +0800</pubDate>
+      
+      <guid>https://woniu-create.github.io/posts/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</guid>
+      <description> js函数调用时机不同，得到的结果不同。 setTimeout()方法用于在指定的毫秒数后调用函数或计算表达式;它的意思是尽快，而不是马上
+我们来看下面一段代码  let i=0; for(i=0;i&amp;lt;6;i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) } 请问:i会打印出什么呢? 到浏览器跑一遍代码会发现输出的是:6个6,原因如下:
+因为setTimeout是一个异步任务，执行到这里的操作会被浏览器丢到另一个任务队列里去， 浏览器这时候会继续执行for循环。每一次for循环的时候，setTimeout都执行一次，但是里面的函数没有被执行，而是被放到了任务队列里面，等待执行，for循环了6次，就放了6次，当主线程执行完成后，才进入任务队列里面执行。这时候因为for循环i=6了，所以输出的全部都是6
+如何理解异步? 异步代码不等待结果，直接进行下面的代码，所以定时器只是开启了，而没有立即执行里面的代码，等到当前运行坏境的代码执行完之后再回来执行定时器里面的代码。总结：异步就是不等待结果的代码。
+如何让上面代码打印出0-5呢? 使用for let配合
+for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) } 因为用let声明变量的作用域值在当前函数中，所有每次for循环生成的都是新的i,setTimeout里输出的 i就是新的i，所以输出正常。
+还可以使用立即执行函数
+let i for(i = 0; i&amp;lt;6; i++){ !function(j){ setTimeout(()=&amp;gt;{ console.log(j) },0) }(i) } </description>
+    </item>
+    
+    <item>
+      <title>Html重难点标签</title>
+      <link>https://woniu-create.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Fri, 01 Jan 2021 11:49:40 +0800</pubDate>
+      
+      <guid>https://woniu-create.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9%E6%A0%87%E7%AD%BE/</guid>
+      <description>html的重难点标有:a标签，table标签，img标签，form标签，input标签
+a标签 a标签的属性有:
+ href target download rel=noopener  a标签的作用: 1、跳转到外部页面 ，2、跳转到内部锚点，3、跳到邮箱或者电话
+a的href取值:
+网址:
+https://google.com
+http://google.com
+//google.com
+路径
+/a/b/c(绝对路径)以及a/b/c(相对路径)，index.html及./index.html
+伪协议
+javascript:代码;
+maito:邮箱
+tel:手机号
+id
+href=#xxx
+a标签的target取值:
+_blank:在新窗口打开
+_top:在顶部，最外面的窗口打开
+_parent:在父级窗口打开
+_self:基于当前窗口打开
+table标签 与table相关的标签有:table ,thead ,tbody,tfoot,tr,td,th。相关的样式有:table-layout,border-collapse,border-spacing,我们来做个小练习吧，代码如下:
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; table{ width: 600px; border-spacing: collapse; border-spacing: 0; } td, th{ border:1px solid blue; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;table&amp;gt; &amp;lt;thead&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;th&amp;gt;&amp;lt;/th&amp;gt; &amp;lt;th&amp;gt;小红&amp;lt;/th&amp;gt; &amp;lt;th&amp;gt;小明&amp;lt;/th&amp;gt; &amp;lt;th&amp;gt;小黄&amp;lt;/th&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/thead&amp;gt; &amp;lt;tbody&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;th&amp;gt;语文&amp;lt;/th&amp;gt; &amp;lt;td&amp;gt;90&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;100&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;90&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;th&amp;gt;数学&amp;lt;/th&amp;gt; &amp;lt;td&amp;gt;80&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;90&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;90&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;th&amp;gt;英语&amp;lt;/th&amp;gt; &amp;lt;td&amp;gt;90&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;90&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;98&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/tbody&amp;gt; &amp;lt;tfoot&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;th&amp;gt;总分&amp;lt;/th&amp;gt; &amp;lt;td&amp;gt;260&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;280&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;278&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/tfoot&amp;gt; &amp;lt;/table&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 浏览器显示的结果如下: img标签 作用:发出get请求，展示一张图片。</description>
+    </item>
+    
+    <item>
+      <title>使用hugo搭建个人博客</title>
+      <link>https://woniu-create.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 31 Dec 2020 23:20:22 +0800</pubDate>
+      
+      <guid>https://woniu-create.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>为什么选择hugo？官网的描述如下:&amp;ldquo;The world’s fastest framework for building websites.&amp;quot;——Hugo是一个非常受欢迎的、开源的静态网站生成工具，和Hexo类似。 它速度快，扩展性强。hugo的速度很快，不依赖很多东西，一个二进制文件就可以搞定了。
+安装 Mac安装方式:
+1.brew install hugo
+2.hugo version
+window安装方式:
+1.去Hugo releases页面下载hugo_xxx_Windows-64bit.zip
+2.解压，将hugo.exe放到D:\Software\hugo\hugo.exe 3.将D:\Software\hugo\加入到PATH 4.重启终端,运行hugo version查看版本，显示的信息如下则表示安装成功
+快速搭建博客 1.进入hugo官网，点击Quick Start快速开始
+2.step1我们已经下载好了,我们跟着文档一直做到step7就好了
+3.最终得到一个public的目录，说明我们操作正确了
+4.运行 hugo server -D，打开:http://localhost:1313/，结果如下: </description>
+    </item>
+    
     <item>
       <title>测试</title>
-      <link>https://woniu-create.github.io/posts/%E6%BF%80%E5%8A%B1%E8%87%AA%E5%B7%B1/</link>
+      <link>https://woniu-create.github.io/posts/%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Sun, 27 Dec 2020 20:07:32 +0800</pubDate>
       
-      <guid>https://woniu-create.github.io/posts/%E6%BF%80%E5%8A%B1%E8%87%AA%E5%B7%B1/</guid>
+      <guid>https://woniu-create.github.io/posts/%E6%B5%8B%E8%AF%95/</guid>
       <description>这是我第一次用hugo搭建的博客 我以后会用心写博客 接下来我写博客的计划是:  记录平时学到的知识和内容 对于遇到的难点和解决方法记录下来 我的第一篇博客会介绍如何使用hugo搭建博客，敬请期待😁
 这张图片是我测试用的 这是一个段落，假装它很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长。
-现在你发现我已经换行了  我是逐浪新宋我是逐浪圆体我是逐浪花体我是逐浪像素字我是逐浪立楷我是红色我是绿色我是黄色我是蓝色我是紫色我是浅灰色我是尺寸我是尺寸我是逐浪立楷，绿色，尺寸为5console.log(&amp;#39;hi&amp;#39;) </description>
+现在你发现我已经换行了  我是逐浪新宋我是逐浪圆体我是逐浪花体我是逐浪像素字我是逐浪立楷我是红色我是绿色我是黄色我是蓝色我是紫色我是浅灰色我是尺寸我是尺寸我是逐浪立楷，绿色，尺寸为5console.log(&amp;#39;hi&amp;#39;)    颜色名 十六进制颜色值 rgb颜色     黑色（black) 000000 rgb(0, 0, 0)   蓝色（blue） 0000FF rgb(0, 0, 255)   灰色（grey） 808080 rgb(128, 128, 128)   绿色（green） 008000 rgb(0, 128, 0)   橙色（orange） FFA500 rgb(255, 165, 0)   红色(red) FF0000 rgb(255, 0, 0)   黄色（yellow） FFFF00 rgb(255, 255, 0)    </description>
     </item>
     
   </channel>

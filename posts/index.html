@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://woniu-create.github.io/posts/" />
-<meta property="og:updated_time" content="2020-12-27T20:07:32+08:00" />
+<meta property="og:updated_time" content="2021-03-19T19:28:05+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 <meta name="twitter:card" content="summary"/>
@@ -103,14 +103,120 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="https://woniu-create.github.io/posts/%E6%BF%80%E5%8A%B1%E8%87%AA%E5%B7%B1/" class="link black dim">
+      <a href="https://woniu-create.github.io/posts/jquery%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="link black dim">
+        Jquery基本操作
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      本文将介绍Jquery的常用操作。
+获取元素 jQuery的基本思想和主要用法，就是 &ldquo;选择某个网页元素，然后对其进行某种操作&rdquo; 。 使用jQuery的第一步，就是将一个选择表达式，放进构造函数jQuery()（简写为$）,然后得到被选中的元素。
+如下所示:
+$(document) //选择整个文档对象  $(&#39;#myId&#39;) //选择ID为myId的网页元素  $(&#39;div.myClass&#39;) // 选择class为myClass的div元素  $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素 　$(&#39;a:first&#39;) //选择网页中第一个a元素  $(&#39;tr:odd&#39;) //选择表格的奇数行  $(&#39;#myForm :input&#39;) // 选择表单中的input元素 Jquery提供了强大的过滤功能，对结果集进行过滤，缩小选择范围，如下所示:
+$(&#39;div&#39;).has(&#39;p&#39;); // 选择包含p元素的div元素  $(&#39;div&#39;).not(&#39;.myClass&#39;); //选择class不等于myClass的div元素  $(&#39;div&#39;).filter(&#39;.myClass&#39;); //选择class等于myClass的div元素  $(&#39;div&#39;).first(); //选择第1个div元素  $(&#39;div&#39;).eq(5); //选择第6个div元素 从结果集出发，找到附近的相关元素
+$(&#39;div&#39;).next(&#39;p&#39;); //选择div元素后面的第一个p元素  $(&#39;div&#39;).parent(); //选择div元素的父元素  $(&#39;div&#39;).closest(&#39;form&#39;); //选择离div最近的那个form父元素  $(&#39;div&#39;).children(); //选择div的所有子元素  $(&#39;div&#39;).siblings(); //选择div的同级元素 链式操作思想 链式操作是jQuery设计思想之一，就是在选中的网页元素后面，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来,如:
+$(&#39;div&#39;).find(&#39;h3&#39;).eq(2).html(&#39;Hello&#39;); 分解开来，如下:
+$(&#39;div&#39;) //找到div元素  .find(&#39;h3&#39;) //选择其中的h3元素  .
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://woniu-create.github.io/posts/js%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" class="link black dim">
+        Js函数执行机制
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       js函数调用时机不同，得到的结果不同。 setTimeout()方法用于在指定的毫秒数后调用函数或计算表达式;它的意思是尽快，而不是马上
+我们来看下面一段代码  let i=0; for(i=0;i&lt;6;i++){ setTimeout(()=&gt;{ console.log(i) },0) } 请问:i会打印出什么呢? 到浏览器跑一遍代码会发现输出的是:6个6,原因如下:
+因为setTimeout是一个异步任务，执行到这里的操作会被浏览器丢到另一个任务队列里去， 浏览器这时候会继续执行for循环。每一次for循环的时候，setTimeout都执行一次，但是里面的函数没有被执行，而是被放到了任务队列里面，等待执行，for循环了6次，就放了6次，当主线程执行完成后，才进入任务队列里面执行。这时候因为for循环i=6了，所以输出的全部都是6
+如何理解异步? 异步代码不等待结果，直接进行下面的代码，所以定时器只是开启了，而没有立即执行里面的代码，等到当前运行坏境的代码执行完之后再回来执行定时器里面的代码。总结：异步就是不等待结果的代码。
+如何让上面代码打印出0-5呢? 使用for let配合
+for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) } 因为用let声明变量的作用域值在当前函数中，所有每次for循环生成的都是新的i,setTimeout里输出的 i就是新的i，所以输出正常。
+还可以使用立即执行函数
+let i for(i = 0; i&lt;6; i++){ !function(j){ setTimeout(()=&gt;{ console.log(j) },0) }(i) } 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://woniu-create.github.io/posts/html%E9%87%8D%E9%9A%BE%E7%82%B9%E6%A0%87%E7%AD%BE/" class="link black dim">
+        Html重难点标签
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      html的重难点标有:a标签，table标签，img标签，form标签，input标签
+a标签 a标签的属性有:
+ href target download rel=noopener  a标签的作用: 1、跳转到外部页面 ，2、跳转到内部锚点，3、跳到邮箱或者电话
+a的href取值:
+网址:
+https://google.com
+http://google.com
+//google.com
+路径
+/a/b/c(绝对路径)以及a/b/c(相对路径)，index.html及./index.html
+伪协议
+javascript:代码;
+maito:邮箱
+tel:手机号
+id
+href=#xxx
+a标签的target取值:
+_blank:在新窗口打开
+_top:在顶部，最外面的窗口打开
+_parent:在父级窗口打开
+_self:基于当前窗口打开
+table标签 与table相关的标签有:table ,thead ,tbody,tfoot,tr,td,th。相关的样式有:table-layout,border-collapse,border-spacing,我们来做个小练习吧，代码如下:
+&lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; table{ width: 600px; border-spacing: collapse; border-spacing: 0; } td, th{ border:1px solid blue; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;&lt;/th&gt; &lt;th&gt;小红&lt;/th&gt; &lt;th&gt;小明&lt;/th&gt; &lt;th&gt;小黄&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;th&gt;语文&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;100&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;数学&lt;/th&gt; &lt;td&gt;80&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;th&gt;英语&lt;/th&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;90&lt;/td&gt; &lt;td&gt;98&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;th&gt;总分&lt;/th&gt; &lt;td&gt;260&lt;/td&gt; &lt;td&gt;280&lt;/td&gt; &lt;td&gt;278&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt; &lt;/table&gt; &lt;/body&gt; &lt;/html&gt; 浏览器显示的结果如下: img标签 作用:发出get请求，展示一张图片。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://woniu-create.github.io/posts/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
+        使用hugo搭建个人博客
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      为什么选择hugo？官网的描述如下:&ldquo;The world’s fastest framework for building websites.&quot;——Hugo是一个非常受欢迎的、开源的静态网站生成工具，和Hexo类似。 它速度快，扩展性强。hugo的速度很快，不依赖很多东西，一个二进制文件就可以搞定了。
+安装 Mac安装方式:
+1.brew install hugo
+2.hugo version
+window安装方式:
+1.去Hugo releases页面下载hugo_xxx_Windows-64bit.zip
+2.解压，将hugo.exe放到D:\Software\hugo\hugo.exe 3.将D:\Software\hugo\加入到PATH 4.重启终端,运行hugo version查看版本，显示的信息如下则表示安装成功
+快速搭建博客 1.进入hugo官网，点击Quick Start快速开始
+2.step1我们已经下载好了,我们跟着文档一直做到step7就好了
+3.最终得到一个public的目录，说明我们操作正确了
+4.运行 hugo server -D，打开:http://localhost:1313/，结果如下: 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://woniu-create.github.io/posts/%E6%B5%8B%E8%AF%95/" class="link black dim">
         测试
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       这是我第一次用hugo搭建的博客 我以后会用心写博客 接下来我写博客的计划是:  记录平时学到的知识和内容 对于遇到的难点和解决方法记录下来 我的第一篇博客会介绍如何使用hugo搭建博客，敬请期待😁
 这张图片是我测试用的 这是一个段落，假装它很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长。
-现在你发现我已经换行了  我是逐浪新宋我是逐浪圆体我是逐浪花体我是逐浪像素字我是逐浪立楷我是红色我是绿色我是黄色我是蓝色我是紫色我是浅灰色我是尺寸我是尺寸我是逐浪立楷，绿色，尺寸为5console.log(&#39;hi&#39;) 
+现在你发现我已经换行了  我是逐浪新宋我是逐浪圆体我是逐浪花体我是逐浪像素字我是逐浪立楷我是红色我是绿色我是黄色我是蓝色我是紫色我是浅灰色我是尺寸我是尺寸我是逐浪立楷，绿色，尺寸为5console.log(&#39;hi&#39;)    颜色名 十六进制颜色值 rgb颜色     黑色（black) 000000 rgb(0, 0, 0)   蓝色（blue） 0000FF rgb(0, 0, 255)   灰色（grey） 808080 rgb(128, 128, 128)   绿色（green） 008000 rgb(0, 128, 0)   橙色（orange） FFA500 rgb(255, 165, 0)   红色(red) FF0000 rgb(255, 0, 0)   黄色（yellow） FFFF00 rgb(255, 255, 0)    
     </div>
   </div>
 </div>
@@ -124,7 +230,7 @@
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://woniu-create.github.io" >
-    &copy;  捉泥鳅的博客 2020 
+    &copy;  捉泥鳅的博客 2021 
   </a>
     <div>
 
